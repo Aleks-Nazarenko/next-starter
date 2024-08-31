@@ -110,6 +110,7 @@ jobs:
           deployment-id: ${{ matrix.deployment-id }}
           action: update-status
           status: ${{ job.status }}
+          dist-folder: out
 
   notify-deployment-finished:
     needs: deploy-to-ionos
