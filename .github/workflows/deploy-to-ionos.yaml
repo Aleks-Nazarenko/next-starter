@@ -86,7 +86,7 @@ jobs:
       - name: Render SSH user secret name
         run: echo SSH_USERNAME_SECRET=IONOS_DEPLOYMENT_`echo ${{ matrix.deployment-id }} | tr '[:lower:]' '[:upper:]' | tr '-' '_'`_SSH_USERNAME >> $GITHUB_ENV
 
-      - name: Deploy to IONOS
+      - name: Deploy to IONOS Nazarenko
         uses: ionos-deploy-now/deploy-to-ionos-action@v2
         with:
           api-key: ${{ secrets.IONOS_API_KEY }}
@@ -99,7 +99,7 @@ jobs:
           ssh-key: ${{ secrets.IONOS_SSH_KEY }}
           dist-folder: out
 
-      - name: Update deployment status
+      - name: Update deployment status Nazarenko
         if: ${{ always() }}
         uses: ionos-deploy-now/project-action@v1
         with:
